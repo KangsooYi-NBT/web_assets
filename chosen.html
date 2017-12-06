@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>광고 태그 선택기</title>
+    <link rel="stylesheet" href="https://harvesthq.github.io/chosen/docsupport/style.css">
+    <link rel="stylesheet" href="https://harvesthq.github.io/chosen/docsupport/prism.css">
+    <link rel="stylesheet" href="https://harvesthq.github.io/chosen/chosen.css">
+</head>
+<body>
+<div id="container">
+    <div id="content">
+        <select id="ad_tags" data-placeholder="광고 태그 선택" class="chosen-select" multiple>
+            <option value=""></option>
+            <optgroup label="패션/뷰티">
+                <option value="FashionM">패션/스타일/액세서리</option>
+                <option value="Beuaty">뷰티/코스메틱</option>
+                <option value="Luxury">명품/고가 상품</option>
+                <option value="Cosmetic">화장품</option>
+            </optgroup>
+
+            <optgroup label="쇼핑">
+                <option value="Shopping">쇼핑</option>
+            </optgroup>
+
+            <optgroup label="멤버십/쿠폰/할인">
+                <option value="Membership">멤버십/쿠폰/할인</option>
+            </optgroup>
+
+            <optgroup label="리빙">
+                <option value="Furniture">가구/인테리어</option>
+                <option value="Grocery">장보기/마트/생활용품/소모품</option>
+                <option value="Electronics">가전제품</option>
+                <option value="Pet">반려동물</option>
+                <option value="Living">생활/살림 정보</option>
+            </optgroup>
+
+            <optgroup label="식음료">
+                <option value="Cooking">요리/레시피</option>
+                <option value="Coffee">커피/디저트/음료</option>
+                <option value="Liquor">주류</option>
+                <option value="Delivery">배달/주문</option>
+                <option value="Restaurant">맛집/외식</option>
+            </optgroup>
+
+            <optgroup label="육아/양육">
+                <option value="Baby">임신/유아(~3세)</option>
+                <option value="Kids">키즈/아동(4세~3세)</option>
+            </optgroup>
+
+            <optgroup label="에듀케이션">
+                <option value="Language">어학</option>
+                <option value="Middle">중고등/입시</option>
+                <option value="License">자격증/편입</option>
+                <option value="Job">취업/구직</option>
+            </optgroup>
+
+            <optgroup label="엔터테인먼트">
+                <option value="Media">방송/연예</option>
+                <option value="Movies">영화</option>
+                <option value="Music">음악</option>
+                <option value="Webcomic">웹툰/웹소설</option>
+            </optgroup>
+
+            <optgroup label="취미/컬쳐">
+                <option value="Books">독서</option>
+                <option value="Tickets">공연/문화생활</option>
+                <option value="Others">취미 일반</option>
+            </optgroup>
+
+            <optgroup label="게임">
+                <option value="Game">게임</option>
+                <option value="PC">PC/온라인게임</option>
+                <option value="Puzzle">퍼즐</option>
+                <option value="Simulation">시뮬레이션/캐주얼</option>
+                <option value="Board">보드/고포류</option>
+                <option value="RPG">RPG</option>
+                <option value="Action">액션</option>
+                <option value="Arcade">아케이드/슈팅/레이싱</option>
+                <option value="Sports">스포츠</option>
+                <option value="Strategy">전략/TCG</option>
+            </optgroup>
+
+            <optgroup label="테크">
+                <option value="Smartphone">스마트폰/스마트폰용품</option>
+                <option value="High">IT/하이테크제품</option>
+            </optgroup>
+
+            <optgroup label="트래블">
+                <option value="Flights">항공</option>
+                <option value="Hotels">숙박</option>
+                <option value="Car">렌터카</option>
+                <option value="Travel">여행정보</option>
+            </optgroup>
+
+            <optgroup label="비즈니스">
+                <option value="Credit">카드</option>
+                <option value="Finance">금융/증권/대출/보험</option>
+                <option value="Real">부동산</option>
+            </optgroup>
+
+            <optgroup label="헬스">
+                <option value="Medical">의료</option>
+                <option value="Fitness">피트니스/다이어트/건강관리</option>
+            </optgroup>
+
+            <optgroup label="스포츠">
+                <option value="SportsG">스포츠 일반</option>
+                <option value="SportsA">스포츠 의류/잡화류</option>
+            </optgroup>
+
+            <option value="Golf">골프</option>
+            <option value="Leisure">레저</option>
+            <option value="Auto">자동차</option>
+            <option value="Date">데이트/연애</option>
+            <option value="Wedding">결혼</option>
+            <option value="Current">시사</option>
+            <option value="Donation">도네이션</option>
+            <option value="Event">이벤트</option>
+            <option value="Snack">스낵형 컨텐츠</option>
+        </select>
+
+        <button onclick="copy(); return false;">Copy to clipboard</button>
+        <input style="display: none;" type="text" id="ad_tags_txt" />
+        <button style="display: none;" id="btn_clipboard" data-clipboard-target="#ad_tags_txt">Cut to clipboard</button>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.js" type="text/javascript"></script>
+<script src="https://harvesthq.github.io/chosen/chosen.jquery.js" type="text/javascript"></script>
+<script src="https://harvesthq.github.io/chosen/docsupport/prism.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://harvesthq.github.io/chosen/docsupport/init.js" type="text/javascript" charset="utf-8"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.js"></script>
+<script>
+    new Clipboard('#btn_clipboard');
+    function copy() {
+        $('#ad_tags_txt').val($(".chosen-select").chosen().val());
+        $('#ad_tags_txt').show();
+        $('#btn_clipboard').click();
+        $('#ad_tags_txt').hide();
+    }
+</script>
+</body>
+</html>
