@@ -10,8 +10,8 @@
 </head>
 <body style="background-color: #fff;">
 <div id="container">
-    <div id="content" style="border: 0;">
-        <select id="ad_tags" data-placeholder="광고 태그 선택" class="chosen-select" multiple>
+    <div id="content" style="border: 0; width: 90%;">
+        <select id="ad_tags" data-placeholder="광고 태그 선택" class="chosen-select" multiple style="width: 90%;">
             <option value=""></option>
             <optgroup label="패션/뷰티">
                 <option value="FashionM">패션/스타일/액세서리</option>
@@ -121,7 +121,7 @@
             <option value="Snack">스낵형 컨텐츠</option>
         </select>
 
-        <button onclick="copy(); return false;">Copy to clipboard</button>
+        <button onclick="copy(); return false;">Copy</button>
         <input style="display: none;" type="text" id="ad_tags_txt" />
         <button style="display: none;" id="btn_clipboard" data-clipboard-target="#ad_tags_txt">Cut to clipboard</button>
     </div>
